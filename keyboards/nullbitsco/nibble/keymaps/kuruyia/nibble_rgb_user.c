@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+
 #include "nibble_rgb_user.h"
 
 // RGB swirl mode settings
