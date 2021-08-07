@@ -98,6 +98,14 @@ void matrix_scan_user(void) {
     matrix_scan_remote_kb();
 }
 
+void suspend_power_down_user(void) {
+    oled_off();
+}
+
+void suspend_wakeup_init_user(void) {
+    oled_on();
+}
+
 #ifdef OLED_DRIVER_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_90;

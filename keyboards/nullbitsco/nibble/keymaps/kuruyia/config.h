@@ -8,4 +8,7 @@
 
 #define RGBLIGHT_SLEEP
 
+// Re-enabke USB startup check
+#undef NO_USB_STARTUP_CHECK
+
 #endif // NUBBLE_USER_CONFIG_H
