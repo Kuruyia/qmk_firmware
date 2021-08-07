@@ -142,13 +142,36 @@ void oled_task_user(void) {
     led_t led_state = host_keyboard_led_state();
     oled_set_cursor(0, 15);
 
-    oled_write_P(PSTR("C"), led_state.caps_lock);
-    oled_advance_char();
+    oled_write_P(PSTR("C"), false);
 
-    oled_write_P(PSTR("N"), led_state.num_lock);
-    oled_advance_char();
+    if (led_state.caps_lock)
+    {
+        draw_filled_circle(0, 14);
+    } else
+    {
+        draw_circle(0, 14);
+    }
 
-    oled_write_P(PSTR("S"), led_state.scroll_lock);
     oled_advance_char();
+    oled_write_P(PSTR("N"), false);
+
+    if (led_state.num_lock)
+    {
+        draw_filled_circle(2 * OLED_FONT_WIDTH, 14);
+    } else
+    {
+        draw_circle(2 * OLED_FONT_WIDTH, 14);
+    }
+
+    oled_advance_char();
+    oled_write_P(PSTR("S"), false);
+
+    if (led_state.scroll_lock)
+    {
+        draw_filled_circle(4 * OLED_FONT_WIDTH, 14);
+    } else
+    {
+        draw_circle(4 * OLED_FONT_WIDTH, 14);
+    }
 }
 #endif
