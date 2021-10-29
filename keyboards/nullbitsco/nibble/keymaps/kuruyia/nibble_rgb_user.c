@@ -17,6 +17,7 @@ void rgb_previous_anim_user(void) {
             break;
 
         default:
+            rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
             break;
     }
 }
@@ -32,6 +33,7 @@ void rgb_next_anim_user(void) {
             break;
 
         default:
+            rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
             break;
     }
 }
